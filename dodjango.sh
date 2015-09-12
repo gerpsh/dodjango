@@ -4,9 +4,8 @@
 #$3: database name
 #$4: database user for project
 #$5: database user password
-#$6: django version
 sudo apt-get update
-sudo pip install django==$6
+sudo pip install django
 if [ $2 == 'postgres' ]
   then
     sudo apt-get install libpq-dev postgresql postgresql-contrib
@@ -19,7 +18,7 @@ if [ $2 == 'postgres' ]
     psql -c $USER
     psql -c $ALTERPRIVS
     psql -c $GRANT
-    pip install django psycopg2
+    pip install psycopg2
 fi
 
 if [ $2 == 'mongodb']
